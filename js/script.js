@@ -8,3 +8,5 @@
         5. Creare un eventlistener da assegnare alle celle per farle colorare di azzurro quando cliccate.
             5A. Al click dovremmo anche stampare un messaggio in console con il numero della cella cliccata.
 */
+
+console.log("Collegamento js ok");
