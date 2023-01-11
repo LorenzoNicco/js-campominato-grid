@@ -12,12 +12,37 @@
 
 console.log("Collegamento js ok");
 
+const gridSection = document.getElementById("grid-section");
+
 const gridContainer = document.getElementById("grid-container");
+
+const playBtn = document.getElementById("play-button");
+
+playBtn.addEventListener("click", 
+    function () {
+        gridSection.classList.remove("hide");
+            
+        gridSection.classList.add("show");
+    }
+);
 
 for (let i = 1; i <= 100; i++) {
     const myCell = document.createElement("div");
     myCell.classList.add("cell");
     myCell.innerHTML = i;
+
+    myCell.addEventListener("click",
+        function () {
+            if (myCell.classList.contains("click-azure")) {
+                myCell.classList.remove("click-azure");
+            }
+            else {
+                myCell.classList.add("click-azure");
+
+                console.log("Il numero della cella è: " + i);
+            }
+        }
+    );
 
     gridContainer.append(myCell);
 }
