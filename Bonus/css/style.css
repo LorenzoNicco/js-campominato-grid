@@ -26,20 +26,36 @@ main {
 }
 
 /* HEADER **********************************/
+#level-selector {
+    width: 10rem;
+    cursor: pointer;
+    background-color: #e9e9ed;
+    border-radius: 5px;
+    height: 1.5rem;
+    border: 1px solid lightgray;
+}
+
 #play-button {
     width: 5rem;
     cursor: pointer;
+    height: 1.5rem;
+    border-radius: 5px;
+    border: 1px solid lightgray;
 }
 
 /* MAIN **********************************/
-#grid-section {
+#grid-section-easy,
+#grid-section-medium,
+#grid-section-hard {
     border: 2px solid black;
     height: 70vh;
     width: 70vh;
     background-color: coral;
 }
 
-#grid-container {
+#grid-container-easy,
+#grid-container-medium,
+#grid-container-hard {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -47,13 +63,22 @@ main {
 }
 
 .cell {
-    border: 2px solid black;
-    height: 10%;
-    width: 10%;    display: flex;
+    border: 2px solid black;  
+    display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
     font-size: 50%;
+}
+
+.cell-easy {
+    height: 10%;
+    width: 10%;  
+}
+
+.cell-medium {
+    height: calc(100% / 9);
+    width: calc(100% / 9);  
 }
 
 .click-azure {

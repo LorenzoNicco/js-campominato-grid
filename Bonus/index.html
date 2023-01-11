@@ -13,13 +13,35 @@
         <header class="out-part">
             <h1>Campo minato</h1>
 
-            <button id="play-button">Play</button>
+            <div>
+                <label for="level-selector">Difficoltà:</label>
+
+                <select name="level" id="level-selector">
+                    <option value="easy">Facile</option>
+                    <option value="medium">Medio</option>
+                    <option value="hard">Difficile</option>
+                </select>
+
+                <button id="play-button">Play</button>
+            </div>
         </header>
 
         <main>
             <!-- inizio griglia -->
-            <section id="grid-section" class="hide">
-                <div id="grid-container">
+            <section id="grid-section-easy" class="hide">
+                <div id="grid-container-easy">
+                
+                </div>
+            </section>
+
+            <section id="grid-section-medium" class="hide">
+                <div id="grid-container-medium">
+                
+                </div>
+            </section>
+
+            <section id="grid-section-hard" class="hide">
+                <div id="grid-container-hard">
                 
                 </div>
             </section>

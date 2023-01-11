@@ -12,37 +12,77 @@
 
 console.log("Collegamento js ok");
 
-const gridSection = document.getElementById("grid-section");
+const gridSectionEasy = document.getElementById("grid-section-easy");
 
-const gridContainer = document.getElementById("grid-container");
+const gridContainerEasy = document.getElementById("grid-container-easy");
+
+const gridSectionMedium = document.getElementById("grid-section-medium");
+
+const gridContainerMedium = document.getElementById("grid-container-medium");
+
+const gridSectionHard = document.getElementById("grid-section-hard");
+
+const gridContainerHard = document.getElementById("grid-container-hard");
+
+const levelSelection = document.getElementById("level-selector");
 
 const playBtn = document.getElementById("play-button");
 
 playBtn.addEventListener("click", 
     function () {
-        gridSection.classList.remove("hide");
+        if (levelSelection.value == "easy") {
+            gridSectionEasy.classList.remove("hide");
             
-        gridSection.classList.add("show");
+            gridSectionEasy.classList.add("show");
+
+            for (let i = 1; i <= 100; i++) {
+                const myCell = document.createElement("div");
+                myCell.classList.add("cell", "cell-easy");
+                myCell.innerHTML = i;
+            
+                myCell.addEventListener("click",
+                    function () {
+                        if (myCell.classList.contains("click-azure")) {
+                            myCell.classList.remove("click-azure");
+                        }
+                        else {
+                            myCell.classList.add("click-azure");
+            
+                            console.log("Il numero della cella è: " + i);
+                        }
+                    }
+                );
+            
+                gridContainerEasy.append(myCell);
+            }
+        }
+        else if (levelSelection.value == "medium") {
+            gridSectionMedium.classList.remove("hide");
+            
+            gridSectionMedium.classList.add("show");
+
+            for (let i = 1; i <= 81; i++) {
+                const myCell = document.createElement("div");
+                myCell.classList.add("cell", "cell-medium");
+                myCell.innerHTML = i;
+            
+                myCell.addEventListener("click",
+                    function () {
+                        if (myCell.classList.contains("click-azure")) {
+                            myCell.classList.remove("click-azure");
+                        }
+                        else {
+                            myCell.classList.add("click-azure");
+            
+                            console.log("Il numero della cella è: " + i);
+                        }
+                    }
+                );
+            
+                gridContainerMedium.append(myCell);
+            }
+        }
+
     }
 );
 
-for (let i = 1; i <= 100; i++) {
-    const myCell = document.createElement("div");
-    myCell.classList.add("cell");
-    myCell.innerHTML = i;
-
-    myCell.addEventListener("click",
-        function () {
-            if (myCell.classList.contains("click-azure")) {
-                myCell.classList.remove("click-azure");
-            }
-            else {
-                myCell.classList.add("click-azure");
-
-                console.log("Il numero della cella è: " + i);
-            }
-        }
-    );
-
-    gridContainer.append(myCell);
-}
