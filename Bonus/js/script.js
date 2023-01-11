@@ -12,25 +12,30 @@
 
 console.log("Collegamento js ok");
 
+// Difficoltà Facile
 const gridSectionEasy = document.getElementById("grid-section-easy");
 
 const gridContainerEasy = document.getElementById("grid-container-easy");
 
+// Difficoltà Media
 const gridSectionMedium = document.getElementById("grid-section-medium");
 
 const gridContainerMedium = document.getElementById("grid-container-medium");
 
+// Difficoltà Difficile
 const gridSectionHard = document.getElementById("grid-section-hard");
 
 const gridContainerHard = document.getElementById("grid-container-hard");
 
+// Bottoni
 const levelSelection = document.getElementById("level-selector");
 
 const playBtn = document.getElementById("play-button");
 
+// Evento play
 playBtn.addEventListener("click", 
     function () {
-        if (levelSelection.value == "easy") {
+        if (levelSelection.value == "easy") { //Inizio livello facile
             gridSectionEasy.classList.remove("hide");
             
             gridSectionEasy.classList.add("show");
@@ -56,7 +61,7 @@ playBtn.addEventListener("click",
                 gridContainerEasy.append(myCell);
             }
         }
-        else if (levelSelection.value == "medium") {
+        else if (levelSelection.value == "medium") { //Inizio livello medio
             gridSectionMedium.classList.remove("hide");
             
             gridSectionMedium.classList.add("show");
@@ -80,6 +85,32 @@ playBtn.addEventListener("click",
                 );
             
                 gridContainerMedium.append(myCell);
+            }
+        }
+        else if (levelSelection.value == "hard") { //Inizio livello difficile
+            gridSectionHard.classList.remove("hide");
+            
+            gridSectionHard.classList.add("show");
+
+            for (let i = 1; i <= 49; i++) {
+                const myCell = document.createElement("div");
+                myCell.classList.add("cell", "cell-hard");
+                myCell.innerHTML = i;
+            
+                myCell.addEventListener("click",
+                    function () {
+                        if (myCell.classList.contains("click-azure")) {
+                            myCell.classList.remove("click-azure");
+                        }
+                        else {
+                            myCell.classList.add("click-azure");
+            
+                            console.log("Il numero della cella è: " + i);
+                        }
+                    }
+                );
+            
+                gridContainerHard.append(myCell);
             }
         }
 
