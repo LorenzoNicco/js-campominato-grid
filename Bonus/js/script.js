@@ -37,8 +37,6 @@ playBtn.addEventListener("click",
     function () {
         if (levelSelection.value == "easy") { //Inizio livello facile
             gridSectionEasy.classList.remove("hide");
-            
-            gridSectionEasy.classList.add("show");
 
             for (let i = 1; i <= 100; i++) {
                 const myCell = document.createElement("div");
@@ -63,8 +61,6 @@ playBtn.addEventListener("click",
         }
         else if (levelSelection.value == "medium") { //Inizio livello medio
             gridSectionMedium.classList.remove("hide");
-            
-            gridSectionMedium.classList.add("show");
 
             for (let i = 1; i <= 81; i++) {
                 const myCell = document.createElement("div");
@@ -89,8 +85,6 @@ playBtn.addEventListener("click",
         }
         else if (levelSelection.value == "hard") { //Inizio livello difficile
             gridSectionHard.classList.remove("hide");
-            
-            gridSectionHard.classList.add("show");
 
             for (let i = 1; i <= 49; i++) {
                 const myCell = document.createElement("div");

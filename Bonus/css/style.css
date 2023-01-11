@@ -90,10 +90,6 @@ main {
     background-color: lightseagreen;
 }
 
-.show {
-    display: block;
-}
-
 .hide {
     display: none;
 }
