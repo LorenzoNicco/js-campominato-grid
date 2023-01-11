@@ -11,3 +11,13 @@
 */
 
 console.log("Collegamento js ok");
+
+const gridContainer = document.getElementById("grid-container");
+
+for (let i = 1; i <= 100; i++) {
+    const myCell = document.createElement("div");
+    myCell.classList.add("cell");
+    myCell.innerHTML = i;
+
+    gridContainer.append(myCell);
+}
